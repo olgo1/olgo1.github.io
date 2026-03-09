@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия 1514</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f9; color: #2c3e50; padding: 20px; display: flex; justify-content: center; font-weight: normal; }
+        .container { background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 800px; }
+        h1 { text-align: center; color: #34495e; margin-bottom: 25px; font-weight: normal; }
+        .timer { font-size: 32px; color: #e74c3c; text-align: center; margin-bottom: 25px; font-family: monospace; border: 2px solid #e74c3c; border-radius: 8px; padding: 10px; background: #fff5f5; font-weight: normal; }
+        .problem-box { background: #f8f9fa; border: 1px solid #e1e8ed; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 6px solid #3498db; }
+        .problem-text { font-size: 18px; margin-bottom: 15px; line-height: 1.5; font-weight: normal; }
+        input[type="text"] { padding: 12px; font-size: 18px; border: 2px solid #bdc3c7; border-radius: 6px; width: 150px; outline: none; transition: border 0.3s; font-weight: normal; }
+        input[type="text"]:focus { border-color: #3498db; }
+        .btn { background: #3498db; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 8px; cursor: pointer; width: 100%; transition: 0.2s; margin-top: 10px; font-weight: normal; }
+        .btn:hover { background: #2980b9; }
+        .menu-btn { background: #2ecc71; margin-bottom: 15px; }
+        .hidden { display: none; }
+        .result-card { border-left: 8px solid #ddd; padding: 20px; margin-bottom: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-radius: 8px; font-weight: normal; }
+        .result-card.is-correct { border-left-color: #2ecc71; background: #f0fff4; }
+        .result-card.is-wrong { border-left-color: #e74c3c; background: #fff5f5; }
+        .correct-val { color: #27ae60; }
+        .user-val-wrong { color: #e74c3c; text-decoration: line-through; }
+        .badge { display: inline-block; padding: 5px 12px; border-radius: 5px; color: white; margin-bottom: 10px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div id="start-menu">
+        <h1>Тренажёр по геометрии</h1>
+        <button class="btn menu-btn" onclick="initTrainer('base')">БАЗА<br><small>10 мин</small></button>
+        <button class="btn menu-btn" onclick="initTrainer('pro')" style="background:#9b59b6">1 ЗАДАЧА<br><small>10 мин</small></button>
+    </div>
+
+
+    <div id="quiz-view" class="hidden">
+        <div class="timer" id="timer">10:00</div>
+        <div id="problems-list"></div>
+        <button class="btn" onclick="checkAll()">Проверить ответы</button>
+    </div>
+
+
+    <div id="result-view" class="hidden">
+        <h1>Результаты проверки</h1>
+        <div id="score-summary" style="font-size: 24px; text-align: center; margin-bottom: 30px;"></div>
+        <div id="detailed-results"></div>
+        <button class="btn" onclick="location.reload()">Вернуться в меню</button>
+    </div>
+</div>
+
+
+<script>
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+const checkTarget = (val) => {
+    const n = Number(val);
+    const s = n.toString();
+    if (s.length <= 2) return true;
+    if (s.length === 3 && n % 10 === 0) return true;
+    if (s.length === 4 && n % 100 === 0) return true;
+    return false;
+};
+
+
+const generators = {
+    b1: function() {
+        const sidePool = [4, 6, 8, 20, 40, 60, 80];
+        const side = sidePool[getRandomInt(0, sidePool.length-1)];
+        const configs = [{a:"м²",r:"дм",m:"s"},{a:"дм²",r:"см",m:"s"},{a:"см²",r:"мм",m:"s"},{a:"см²",r:"дм",m:"b"},{a:"дм²",r:"м",m:"b"}];
+        let c = configs[getRandomInt(0,4)]; if(c.m==="b" && side<10) return this.b1();
+        const isP = Math.random()<0.8;
+        let ans = c.m==="s" ? (isP?side*40:side*10) : (isP?side*4/10:side/10);
+        return { ans: ans.toString(), text: `Площадь квадрата равна ${side*side} ${c.a}. Найдите ${isP?'его периметр':'длину его стороны'} в ${c.r}. В ответ запишите только число.` };
+    },
+    b2: function() {
+        const P_big = [6, 8, 10, 12, 14, 16, 18, 20][getRandomInt(0,7)];
+        const sumLW = P_big*5; let diff = getRandomInt(10, sumLW-20);
+        if((sumLW+diff)%2!==0) return this.b2();
+        const L= (sumLW+diff)/2, W=(sumLW-diff)/2;
+        const u = [{b:"м",s:"дм",sq:"дм²"},{b:"дм",s:"см",sq:"см²"}][getRandomInt(0,1)];
+        const rand = Math.random(); let ans, q;
+        if(rand<0.6){ ans=L*W; q=`площадь прямоугольника в ${u.sq}`; }
+        else if(rand<0.8){ ans=L; q=`длину прямоугольника в ${u.s}`; }
+        else { ans=W; q=`ширину прямоугольника в ${u.s}`; }
+        if(!checkTarget(ans)) return this.b2();
+        return { ans: ans.toString(), text: `Периметр прямоугольника равен ${P_big} ${u.b}, а его ${Math.random()<0.5?'ширина на '+diff+' '+u.s+' меньше длины':'длина на '+diff+' '+u.s+' больше ширины'}. Найдите ${q}. В ответ запишите только число.` };
+    },
+    b3: function() {
+        let L_m = getRandomInt(10, 50), W_m = getRandomInt(10, 50);
+        let off_dm = getRandomInt(2, 10);
+        let isOut = Math.random()<0.5;
+        let p_p = 200*(L_m+W_m), p_f = isOut ? (p_p + 8*off_dm*10) : (p_p - 8*off_dm*10);
+        if(!checkTarget(p_f) || p_f<=0 || !checkTarget(p_p)) return this.b3();
+        let text = isOut 
+            ? `Вокруг прямоугольного участка поставили забор. Длина участка — ${L_m} м, ширина — ${W_m*10} дм. Забор находится на расстоянии ${off_dm} дм от каждой стороны участка. Найдите длину забора в см.`
+            : `На прямоугольном участке поставили забор. Ширина участка — ${W_m*10} дм, длина — ${L_m} м. Забор стоит с отступом ${off_dm} дм от каждой стороны на участке. Найдите длину забора в см.`;
+        return { ans: p_f.toString(), text: text + " В ответ запишите только число." };
+    },
+    b4: function() {
+        const s = getRandomInt(6, 9);
+        let nL = getRandomInt(20, 80), nW = getRandomInt(Math.floor(nL*0.65), nL-1);
+        let L_cm = nL*s, W_cm = nW*s;
+        if(L_cm%100!==0 || W_cm%10!==0 || (L_cm*W_cm)%4!==0 || Math.floor(L_cm*W_cm/100)%4!==0) return this.b4();
+        if(!checkTarget(nL*nW)) return this.b4();
+        let diff_cm = L_cm - W_cm;
+        let d_v, d_u;
+        if (diff_cm % 100 === 0) { d_v = diff_cm / 100; d_u = "м"; }
+        else { d_v = diff_cm / 10; d_u = "дм"; }
+        const fText = Math.random()<0.5 
+            ? `Длина пола прямоугольной комнаты равна ${L_cm/100} м, а его ширина на ${d_v} ${d_u} меньше длины.` 
+            : `Ширина пола прямоугольной комнаты равна ${W_cm/10} дм, а его длина на ${d_v} ${d_u} больше ширины.`;
+        const tText = Math.random()<0.5 
+            ? `Пол замостили квадратной плиткой, сторона одной плитки равна ${s} см.` 
+            : `Пол замостили квадратной плиткой, периметр одной плитки равен ${s*4} см.`;
+        return { ans: (nL*nW).toString(), text: `${fText} ${tText} Сколько таких плиток понадобилось, чтобы полностью замостить пол? В ответ запишите только число.` };
+    },
+    p1: function() {
+        let d_dm = getRandomInt(2, 10)*2; let inc_dm = (d_dm + getRandomInt(2, 8))*2;
+        let L = (inc_dm/2 + d_dm)/2, W = (inc_dm/2 - d_dm)/2;
+        if(W<=0 || L%1!==0) return this.p1();
+        return { ans: (L*W).toString(), text: `Длина прямоугольника на ${d_dm*10} см больше его ширины. После того, как каждую сторону увеличили в два раза, его периметр увеличился на ${inc_dm} дм. Найдите площадь первоначального прямоугольника в дм². В ответ запишите только число.` };
+    }
+};
+
+
+let tasks = [];
+let timerId;
+let timeLeft = 10 * 60;
+
+
+function initTrainer(mode) {
+    tasks = [];
+    document.getElementById('problems-list').innerHTML = '';
+    timeLeft = 10 * 60;
+    if (mode === 'base') {
+        tasks.push(generators.b1(), generators.b2(), generators.b3(), generators.b4());
+    } else {
+        const proKeys = ['p1', 'b4', 'b3'];
+        tasks.push(generators[proKeys[getRandomInt(0, proKeys.length-1)]]());
+    }
+    tasks.forEach((t, i) => {
+        document.getElementById('problems-list').innerHTML += `<div class="problem-box"><div class="problem-text">${i+1}. ${t.text}</div><input type="text" id="ans-${i}" autocomplete="off"></div>`;
+    });
+    document.getElementById('start-menu').classList.add('hidden');
+    document.getElementById('quiz-view').classList.remove('hidden');
+    timerId = setInterval(() => {
+        timeLeft--;
+        let m = Math.floor(timeLeft/60), s = timeLeft%60;
+        document.getElementById('timer').innerText = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        if(timeLeft <= 0) checkAll();
+    }, 1000);
+}
+
+
+function checkAll() {
+    clearInterval(timerId);
+    let score = 0;
+    const details = document.getElementById('detailed-results');
+    details.innerHTML = '';
+    tasks.forEach((t, i) => {
+        const uVal = document.getElementById(`ans-${i}`).value.trim();
+        const ok = uVal === t.ans; if(ok) score++;
+        details.innerHTML += `
+            <div class="result-card ${ok?'is-correct':'is-wrong'}">
+                <div class="badge" style="background:${ok?'#2ecc71':'#e74c3c'}">${ok?'ВЕРНО':'ОШИБКА'}</div>
+                <div class="problem-text">${t.text}</div>
+                <div>${ok ? `Ответ: <span class="correct-val">${uVal}</span>` : `Ваш ответ: <span class="user-val-wrong">${uVal || 'пусто'}</span> | Правильный: <span class="correct-val">${t.ans}</span>`}</div>
+            </div>`;
+    });
+    document.getElementById('score-summary').innerHTML = `Результат: ${score} из ${tasks.length}`;
+    document.getElementById('quiz-view').classList.add('hidden');
+    document.getElementById('result-view').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
