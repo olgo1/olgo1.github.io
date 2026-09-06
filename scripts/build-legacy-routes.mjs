@@ -3,11 +3,11 @@ import path from "node:path";
 
 const routes = {
   "pages/listochki": ["/archive/#worksheets", "Листочки перенесены в материалы"],
-  "pages/exams-1514": ["/archive/#exam-4-5", "Экзамены прошлых лет"],
-  "pages/ekzamen-iz-4-v-5-klass": ["/archive/#exam-4-5", "Экзамены из 4 в 5 класс"],
-  "pages/ekzamen-iz-5-v-6-klass": ["/archive/#exam-5-6", "Экзамены из 5 в 6 класс"],
-  "pages/ekzamen-iz-6-v-7-klass": ["/archive/#exam-6-7", "Экзамены из 6 в 7 класс"],
-  "pages/ekzamen-iz-7-v-8-klass": ["/archive/#exam-7-8", "Экзамены из 7 в 8 класс"],
+  "pages/exams-1514": ["/archive/", "Экзамены прошлых лет"],
+  "pages/ekzamen-iz-4-v-5-klass": ["/archive/", "Экзамены из 4 в 5 класс"],
+  "pages/ekzamen-iz-5-v-6-klass": ["/archive/", "Экзамены из 5 в 6 класс"],
+  "pages/ekzamen-iz-6-v-7-klass": ["/archive/", "Экзамены из 6 в 7 класс"],
+  "pages/ekzamen-iz-7-v-8-klass": ["/archive/", "Экзамены из 7 в 8 класс"],
   "pages/algebra-9-matklass": ["/grade9/", "Алгебра, 9 класс"],
   "pages/algebra-8-matklass-20252026": ["/archive/#algebra-8", "Алгебра, 8 класс"],
   "pages/kruzhok-5-klass-20252026": ["/archive/#worksheets", "Кружок по математике, 5 класс"],
@@ -24,7 +24,7 @@ const routes = {
   "courses/7-klass": ["/archive/#trainers", "Старый курс 7 класса"],
   "obo-mne": ["/", "О сайте"],
   "ekspress-kursy-4-kl": ["/archive/#worksheets", "Экспресс-курсы 4 класса"],
-  "trenirovochnyi-ekzamen-4-kl": ["/archive/#exam-4-5", "Тренировочный экзамен 4 класса"],
+  "trenirovochnyi-ekzamen-4-kl": ["/archive/", "Тренировочный экзамен 4 класса"],
   "2024-2025-uch-god": ["/archive/#worksheets", "Материалы 2024–2025 учебного года"],
 };
 

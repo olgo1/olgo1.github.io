@@ -117,6 +117,8 @@ records.sort((a, b) => {
   return yb - ya || a.title.localeCompare(b.title, "ru", { numeric: true });
 });
 
+const linkedRecords = records.filter(record => !record.group.startsWith("exam-"));
+
 function renderGroup(group) {
   const items = records.filter(record => record.group === group.id);
   if (!items.length) return "";
@@ -142,18 +144,17 @@ const html = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Учебные материалы и экзамены по математике школы 1514.">
+  <meta name="description" content="Учебные материалы по математике школы 1514.">
   <title>Материалы — Математика 1514</title>
   <link rel="stylesheet" href="/assets/styles.css">
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/" aria-current="page">Материалы</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/" aria-current="page">Материалы</a><a href="/contacts/">Контакты</a></nav></div></header>
   <main class="page" id="content">
-    <div class="section-heading"><h1>Материалы</h1><p class="lead">${records.length} PDF: экзамены прошлых лет, листочки, решения и материалы курсов. Файлы хранятся прямо на этом сайте.</p></div>
-    <nav class="toc" aria-label="Оглавление материалов"><strong>Оглавление</strong><ul><li><a href="#exam-4-5">Из 4 в 5 класс</a></li><li><a href="#exam-5-6">Из 5 в 6 класс</a></li><li><a href="#exam-6-7">Из 6 в 7 класс</a></li><li><a href="#exam-7-8">Из 7 в 8 класс</a></li><li><a href="#exam-8-9">Из 8 в 9 класс</a></li><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li></ul></nav>
-    ${renderSection("exams", "Экзамены прошлых лет", "Работы для перехода в следующий класс: задания, варианты, ответы и решения.")}
+    <div class="section-heading"><h1>Материалы</h1><p class="lead">Листочки, решения, игры и материалы курсов.</p></div>
+    <nav class="toc" aria-label="Оглавление материалов"><strong>Оглавление</strong><ul><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li></ul></nav>
     ${renderSection("worksheets", "Листочки и материалы курсов", "Материалы сгруппированы по классу и предмету.")}
     ${renderSection("games", "Математические игры", "Правила и готовые материалы для занятий.")}
     <section class="archive-section" id="trainers"><p class="eyebrow">Практика</p><h2>Тренажёры</h2><article class="archive-group"><h3>Сохранённые тренажёры<small>2 ссылки</small></h3><ul class="material-list"><li><a href="/train.html">Геометрия — интерактивный тренажёр</a><span>на сайте</span></li><li><a href="https://stepik.org/a/257463/">4 класс: счёт, уравнения, величины и время</a><span>Stepik</span></li></ul></article></section>
@@ -163,4 +164,4 @@ const html = `<!doctype html>
 </html>`;
 
 await writeFile(path.join(root, "archive", "index.html"), html, "utf8");
-console.log(`Archive built: ${records.length} PDFs in ${groups.length} groups.`);
+console.log(`Materials built: ${linkedRecords.length} linked PDFs; ${records.length} PDFs kept in storage.`);
