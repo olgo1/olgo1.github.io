@@ -35,14 +35,14 @@ function groupFor(file) {
   if (f.includes("archive/files/exams-4-to-5/")) return "exam-4-5";
   if (f.includes("archive/files/exams-5-to-6/") || f.includes("grigri/")) return "exam-5-6";
   if (f.includes("archive/files/exams-6-to-7/")) return "exam-6-7";
-  if (f.startsWith("exams/") || /^7_trenexam/.test(f) || f === "print.pdf" || /7_trenexam/.test(f)) return "exam-7-8";
+  if (f.includes("/exams/") || /7_trenexam/.test(f) || f.endsWith("/print.pdf")) return "exam-7-8";
   if (/8_trenexam/.test(f)) return "exam-8-9";
   if (f.includes("archive/files/games/")) return "games-files";
-  if (f.startsWith("4grade/") || f === "4_6_Comba_book.pdf") return "worksheets-3-6";
-  if (f.startsWith("7grade/geom_course_2025-26/")) return "geometry-7";
-  if (f.startsWith("7grade/courses2025-26/")) return "algebra-7";
-  if (f.startsWith("8grade/")) return "algebra-8";
-  if (f.startsWith("9grade/")) return "algebra-9";
+  if (f.includes("/4grade/") || f.endsWith("/4_6_Comba_book.pdf")) return "worksheets-3-6";
+  if (f.includes("/7grade/geom_course_2025-26/")) return "geometry-7";
+  if (f.includes("/7grade/courses2025-26/")) return "algebra-7";
+  if (f.includes("/8grade/")) return "algebra-8";
+  if (f.includes("/9grade/")) return "algebra-9";
   return "other";
 }
 
@@ -157,7 +157,7 @@ const html = `<!doctype html>
     <nav class="toc" aria-label="Оглавление материалов"><strong>Оглавление</strong><ul><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li></ul></nav>
     ${renderSection("worksheets", "Листочки и материалы курсов", "Материалы сгруппированы по классу и предмету.")}
     ${renderSection("games", "Математические игры", "Правила и готовые материалы для занятий.")}
-    <section class="archive-section" id="trainers"><p class="eyebrow">Практика</p><h2>Тренажёры</h2><article class="archive-group"><h3>Сохранённые тренажёры<small>2 ссылки</small></h3><ul class="material-list"><li><a href="/train.html">Геометрия — интерактивный тренажёр</a><span>на сайте</span></li><li><a href="https://stepik.org/a/257463/">4 класс: счёт, уравнения, величины и время</a><span>Stepik</span></li></ul></article></section>
+    <section class="archive-section" id="trainers"><p class="eyebrow">Практика</p><h2>Тренажёры</h2><article class="archive-group"><ul class="material-list"><li><a href="/train.html">Геометрия — интерактивный тренажёр</a><span>на сайте</span></li><li><a href="https://stepik.org/a/257463/">4 класс: счёт, уравнения, величины и время</a><span>Stepik</span></li></ul></article></section>
   </main>
   <footer class="site-footer"><div class="footer-inner"><span>Математика 1514 · Ольга Морозова</span><div class="footer-links"><a href="/pages/publichnaya-oferta/">Публичная оферта</a><a href="/pages/soglasie-na-obrabotku-personalnyh-dannyh-i-soglasi/">Согласие</a><a href="/pages/politika-konfedencialnosti/">Конфиденциальность</a></div></div></footer>
 </body>

@@ -1,1 +1,48 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Страница не найдена — Математика 1514</title><link rel="stylesheet" href="/assets/styles.css"></head><body><main class="page empty-state"><div><p class="eyebrow">Ошибка 404</p><h1>Страница не найдена</h1><p><a href="/">Вернуться на главную</a> или открыть <a href="/archive/">материалы</a>.</p></div></main></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Скоро все будет — Математика 1514</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script>
+    const redirects = {
+      "/2024-2025-uch-god": "/archive/#worksheets",
+      "/ekspress-kursy-4-kl": "/archive/#worksheets",
+      "/obo-mne": "/contacts/",
+      "/trenirovochnyi-ekzamen-4-kl": "/archive/",
+      "/courses/4-klass": "/archive/#trainers",
+      "/courses/5-klass": "/archive/#trainers",
+      "/courses/6-klass": "/archive/#trainers",
+      "/courses/7-klass": "/archive/#trainers",
+      "/pages/4-klass": "/archive/#worksheets-3-6",
+      "/pages/algebra-8-matklass-20252026": "/archive/#algebra-8",
+      "/pages/algebra-9-matklass": "/grade9/",
+      "/pages/ekzamen-iz-4-v-5-klass": "/archive/",
+      "/pages/ekzamen-iz-5-v-6-klass": "/archive/",
+      "/pages/ekzamen-iz-6-v-7-klass": "/archive/",
+      "/pages/ekzamen-iz-7-v-8-klass": "/archive/",
+      "/pages/exams-1514": "/archive/",
+      "/pages/igry": "/archive/#games",
+      "/pages/kruzhok-5-klass-20252026": "/archive/#worksheets",
+      "/pages/leto-1514-modul-5": "/archive/#worksheets",
+      "/pages/listochki": "/archive/#worksheets",
+      "/pages/trainer": "/archive/#trainers",
+      "/pages/trenazhyor-4-klass": "/archive/#trainers",
+      "/pages/trenazhyor-5-klass": "/archive/#trainers",
+      "/pages/trenazhyor-6-klass": "/archive/#trainers"
+    };
+    const oldPath = location.pathname.replace(/\/+$/, "") || "/";
+    let target = redirects[oldPath];
+    if (!target && /^\/(4grade|7grade|8grade|9grade|exams|grigri)\//.test(oldPath)) {
+      target = "/archive/files/imported" + oldPath;
+    }
+    if (!target && /^\/(4_6_Comba_book|7_trenexam_for8math_alg_202604_v1_7xK|7_trenexam_for8math_alg_202604_v1_ans_f8K|7_trenexam_for8math_alg_202604_v2_2mQ|7_trenexam_for8math_alg_202604_v2_ans_vL7|print)\.pdf$/.test(oldPath)) {
+      target = "/archive/files/imported/root" + oldPath;
+    }
+    if (!target && oldPath.startsWith("/media/")) target = "/assets" + oldPath;
+    if (target) location.replace(target + location.search + location.hash);
+  </script>
+</head>
+<body><main class="page empty-state"><div><h1>Скоро все будет</h1><p><a href="/">Вернуться на главную</a> или открыть <a href="/archive/">материалы</a>.</p></div></main></body>
+</html>
