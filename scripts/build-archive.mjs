@@ -134,7 +134,7 @@ function renderGroup(group) {
 
 function renderSection(id, title, description) {
   const content = groups.filter(group => group.section === id).map(renderGroup).join("\n");
-  return `<section class="archive-section" id="${id}"><p class="eyebrow">Архив</p><h2>${title}</h2><p>${description}</p>${content}</section>`;
+  return `<section class="archive-section" id="${id}"><p class="eyebrow">Материалы</p><h2>${title}</h2><p>${description}</p>${content}</section>`;
 }
 
 const html = `<!doctype html>
@@ -142,22 +142,21 @@ const html = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Архив учебных материалов и экзаменов по математике школы 1514.">
-  <title>Архив — Математика 1514</title>
+  <meta name="description" content="Учебные материалы и экзамены по математике школы 1514.">
+  <title>Материалы — Математика 1514</title>
   <link rel="stylesheet" href="/assets/styles.css">
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/" aria-current="page">Архив</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/" aria-current="page">Материалы</a></nav></div></header>
   <main class="page" id="content">
-    <div class="section-heading"><p class="eyebrow">Все материалы</p><h1>Архив</h1><p class="lead">${records.length} PDF: экзамены прошлых лет, листочки, решения и материалы курсов. Файлы хранятся прямо на этом сайте.</p></div>
-    <nav class="toc" aria-label="Оглавление архива"><strong>Оглавление</strong><ul><li><a href="#exams">Экзамены 1514</a></li><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li><li><a href="#old-pages">Старые страницы</a></li></ul></nav>
-    ${renderSection("exams", "Экзамены 1514", "Работы для перехода в следующий класс: задания, варианты, ответы и решения.")}
+    <div class="section-heading"><h1>Материалы</h1><p class="lead">${records.length} PDF: экзамены прошлых лет, листочки, решения и материалы курсов. Файлы хранятся прямо на этом сайте.</p></div>
+    <nav class="toc" aria-label="Оглавление материалов"><strong>Оглавление</strong><ul><li><a href="#exam-4-5">Из 4 в 5 класс</a></li><li><a href="#exam-5-6">Из 5 в 6 класс</a></li><li><a href="#exam-6-7">Из 6 в 7 класс</a></li><li><a href="#exam-7-8">Из 7 в 8 класс</a></li><li><a href="#exam-8-9">Из 8 в 9 класс</a></li><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li></ul></nav>
+    ${renderSection("exams", "Экзамены прошлых лет", "Работы для перехода в следующий класс: задания, варианты, ответы и решения.")}
     ${renderSection("worksheets", "Листочки и материалы курсов", "Материалы сгруппированы по классу и предмету.")}
     ${renderSection("games", "Математические игры", "Правила и готовые материалы для занятий.")}
     <section class="archive-section" id="trainers"><p class="eyebrow">Практика</p><h2>Тренажёры</h2><article class="archive-group"><h3>Сохранённые тренажёры<small>2 ссылки</small></h3><ul class="material-list"><li><a href="/train.html">Геометрия — интерактивный тренажёр</a><span>на сайте</span></li><li><a href="https://stepik.org/a/257463/">4 класс: счёт, уравнения, величины и время</a><span>Stepik</span></li></ul></article></section>
-    <section class="archive-section" id="old-pages"><p class="eyebrow">История сайта</p><h2>Старые страницы</h2><p>Сохранены прежние адреса основных страниц. Материалы из них распределены по разделам выше.</p><article class="archive-group"><h3>Разделы прежнего сайта<small>сохранённые адреса</small></h3><ul class="material-list"><li><a href="/pages/listochki/">Листочки</a><span>перенесено в архив</span></li><li><a href="/pages/exams-1514/">Экзамены 1514</a><span>перенесено в архив</span></li><li><a href="/pages/trenazhyor-4-klass/">Тренажёр 4 класса</a><span>архивная страница</span></li><li><a href="/pages/trenazhyor-5-klass/">Тренажёр 5 класса</a><span>архивная страница</span></li><li><a href="/pages/trenazhyor-6-klass/">Тренажёр 6 класса</a><span>архивная страница</span></li><li><a href="/pages/igry/">Игры</a><span>перенесено в архив</span></li><li><a href="/pages/algebra-9-matklass/">9 класс, алгебра</a><span>перенесено в раздел 9 класса</span></li><li><a href="https://web.archive.org/web/20240329041917/https://www.mathnomagic.ru/">Версия сайта 2024 года</a><span>Internet Archive</span></li></ul></article></section>
   </main>
   <footer class="site-footer"><div class="footer-inner"><span>Математика 1514 · Ольга Морозова</span><div class="footer-links"><a href="/pages/publichnaya-oferta/">Публичная оферта</a><a href="/pages/soglasie-na-obrabotku-personalnyh-dannyh-i-soglasi/">Согласие</a><a href="/pages/politika-konfedencialnosti/">Конфиденциальность</a></div></div></footer>
 </body>

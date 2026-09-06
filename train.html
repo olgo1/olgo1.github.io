@@ -6,19 +6,19 @@
     <title>Геометрия 1514</title>
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f8fb; color: #182033; padding: 24px; display: flex; justify-content: center; font-weight: normal; }
-        .container { background: white; padding: 36px; border: 1px solid #dfe3eb; border-radius: 20px; box-shadow: 0 18px 45px rgba(30,45,80,.08); width: 100%; max-width: 800px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #3157d5; font-weight: 650; text-decoration: none; }
+        body { margin: 0; font-family: "PT Serif", Georgia, serif; background: #fff; color: #363636; padding: 24px; display: flex; justify-content: center; font-weight: normal; }
+        .container { background: white; padding: 24px; border: 1px solid #dbdbdb; border-radius: 6px; box-shadow: none; width: 100%; max-width: 800px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #3273dc; font-weight: 400; text-decoration: none; }
         .back-link:hover { text-decoration: underline; }
-        h1 { text-align: center; color: #182033; margin-bottom: 25px; font-family: Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: -.02em; }
+        h1 { text-align: center; color: #363636; margin-bottom: 25px; font-family: "PT Serif", Georgia, serif; font-weight: 700; letter-spacing: 0; }
         .timer { font-size: 32px; color: #bd2c3a; text-align: center; margin-bottom: 25px; font-family: monospace; border: 2px solid #d9505f; border-radius: 10px; padding: 10px; background: #fff5f6; font-weight: normal; }
-        .problem-box { background: #f8f9fc; border: 1px solid #dfe3eb; padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #3157d5; }
+        .problem-box { background: #fafafa; border: 1px solid #dbdbdb; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #3273dc; }
         .problem-text { font-size: 18px; margin-bottom: 15px; line-height: 1.5; font-weight: normal; }
         input[type="text"] { padding: 12px; font-size: 18px; border: 2px solid #bdc3c7; border-radius: 6px; width: 150px; outline: none; transition: border 0.3s; font-weight: normal; }
-        input[type="text"]:focus { border-color: #3157d5; }
-        .btn { background: #3157d5; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 10px; cursor: pointer; width: 100%; transition: 0.2s; margin-top: 10px; font-weight: 650; }
-        .btn:hover { background: #2444ad; }
-        .menu-btn { background: #3157d5; margin-bottom: 15px; }
+        input[type="text"]:focus { border-color: #3273dc; }
+        .btn { background: #3273dc; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 4px; cursor: pointer; width: 100%; transition: 0.2s; margin-top: 10px; font-family: inherit; font-weight: 400; }
+        .btn:hover { background: #2366d1; }
+        .menu-btn { background: #3273dc; margin-bottom: 15px; }
         .hidden { display: none; }
         .result-card { border-left: 8px solid #ddd; padding: 20px; margin-bottom: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-radius: 8px; font-weight: normal; }
         .result-card.is-correct { border-left-color: #2ecc71; background: #f0fff4; }
@@ -33,7 +33,7 @@
 
 
 <div class="container">
-    <a class="back-link" href="/archive/#trainers">← Вернуться в архив</a>
+    <a class="back-link" href="/archive/#trainers">← Вернуться к материалам</a>
     <div id="start-menu">
         <h1>Тренажёр по геометрии</h1>
         <button class="btn menu-btn" onclick="initTrainer('base')">БАЗА<br><small>10 мин</small></button>
