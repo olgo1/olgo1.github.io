@@ -31,7 +31,7 @@ for (const [slug, title] of Object.entries(pages)) {
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/">Материалы</a><a href="/contacts/">Контакты</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/pages/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/">Материалы</a><a href="/contacts/">Контакты</a></nav></div></header>
   <main class="page" id="content"><article class="content-shell legal-content"><p class="eyebrow">Документы</p><h1>${title}</h1>${body}</article></main>
   <footer class="site-footer"><div class="footer-inner"><span>Математика 1514 · Ольга Морозова</span><div class="footer-links"><a href="/pages/publichnaya-oferta/">Публичная оферта</a><a href="/pages/pravila-dostupa/">Пользовательское соглашение</a><a href="/pages/soglasie-na-obrabotku-personalnyh-dannyh-i-soglasi/">Согласие</a><a href="/pages/politika-konfedencialnosti/">Конфиденциальность</a></div></div></footer>
 </body>
