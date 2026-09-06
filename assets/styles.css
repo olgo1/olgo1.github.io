@@ -66,9 +66,6 @@ h3 { margin-bottom: 0.65rem; font-size: 1.3rem; }
 .news-item h3 { margin: 0.35rem 0 0.55rem; }
 .news-item p { max-width: 72ch; margin: 0.35rem 0; }
 
-.contact-layout { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 2rem; align-items: start; }
-.contact-photo { width: 132px; height: 145px; overflow: hidden; border: 1px solid var(--line); background: #f5f5f5; }
-.contact-photo img { display: block; width: 660px; max-width: none; height: 190px; transform: translate(-10px, -20px); }
 .contact-details h1 { margin-bottom: 0.35rem; }
 .contact-role { margin: 0 0 1.5rem; color: var(--muted); font-size: 1.05rem; }
 .contact-list { margin: 0; padding: 0; list-style: none; }
