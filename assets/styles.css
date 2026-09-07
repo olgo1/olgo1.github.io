@@ -120,6 +120,13 @@ p { margin: 0.65rem 0; }
 .course-schedule strong,
 .course-schedule span { display: block; }
 
+[id^="SiteWidgetMoyklass"] > .wdgMoyklass-h1,
+[id^="SiteWidgetMoyklass"] > .wdgMoyklass-h3.text-center,
+[id^="SiteWidgetMoyklass"] .oneClassItem,
+[id^="SiteWidgetMoyklass"] [id$="shortDescriptionContainer"] {
+  display: none !important;
+}
+
 .course-class-title { margin-bottom: 1.5rem; font-size: 1rem; }
 .course-section h2 { margin-bottom: 0.35rem; font-size: 1rem; }
 .course-program summary {
