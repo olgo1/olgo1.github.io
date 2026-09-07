@@ -127,8 +127,8 @@ p { margin: 0.65rem 0; }
 .course-registration { display: flex; flex-direction: column; }
 .course-registration .course-cost-title { order: 1; }
 .course-registration .course-cost { order: 2; }
-.course-registration > p:not(.course-cost) { order: 3; }
-.course-registration > h2 { order: 4; }
+.course-registration > h2 { order: 3; }
+.course-registration > p:not(.course-cost) { order: 4; }
 .course-registration > [id^="SiteWidgetMoyklass"] { order: 5; }
 
 [id^="SiteWidgetMoyklass"] > .wdgMoyklass-h1,
