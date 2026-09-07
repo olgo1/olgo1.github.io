@@ -98,6 +98,14 @@ p { margin: 0.65rem 0; }
 .card .card-link { font-weight: 700; }
 .status { display: inline-block; margin-bottom: 0.25rem; color: var(--muted); font-weight: 700; }
 
+.course-list {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-list li { margin: 0.75rem 0; }
+
 .news-item { margin: 1.25rem 0; }
 .news-item time { color: var(--muted); font-size: 0.9rem; }
 .news-item p { max-width: 72ch; }
