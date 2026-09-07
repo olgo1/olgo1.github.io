@@ -108,7 +108,7 @@ p { margin: 0.65rem 0; }
 .course-list li { margin: 0.75rem 0; }
 
 .course-section { margin-top: 2rem; }
-.course-program { margin-top: 0.65rem; }
+.course-program { margin-top: 2rem; }
 
 .course-class-title { margin-bottom: 1.5rem; font-size: 1rem; }
 .course-section h2 { margin-bottom: 0.35rem; font-size: 1rem; }
@@ -127,9 +127,6 @@ p { margin: 0.65rem 0; }
 .course-program summary::-webkit-details-marker { display: none; }
 .course-program summary::marker { content: ""; }
 .course-program[open] summary { margin-bottom: 0.5rem; }
-.program-close-label { display: none; }
-.course-program[open] .program-open-label { display: none; }
-.course-program[open] .program-close-label { display: inline; }
 
 .news-item { margin: 1.25rem 0; }
 .news-item time { color: var(--muted); font-size: 0.9rem; }
