@@ -119,23 +119,35 @@ p { margin: 0.65rem 0; }
 .course-schedule li { margin: 0 0 0.85rem; }
 .course-schedule strong,
 .course-schedule span { display: block; }
+.course-schedule strong { font-size: 1rem; font-weight: 700; line-height: 1.5; }
+.course-schedule-note { margin-bottom: 1rem; }
+.course-schedule-note p { margin: 0.35rem 0; }
+.course-cost-title { margin: 1rem 0 0.35rem; font-size: 1rem; }
+.course-cost { margin-top: 0; }
 
 [id^="SiteWidgetMoyklass"] > .wdgMoyklass-h1,
 [id^="SiteWidgetMoyklass"] > .wdgMoyklass-h3.text-center,
 [id^="SiteWidgetMoyklass"] .oneClassItem,
-[id^="SiteWidgetMoyklass"] [id$="shortDescriptionContainer"] {
+[id^="SiteWidgetMoyklass"] [id$="shortDescriptionContainer"],
+[id^="SiteWidgetMoyklass"] .lesson-item-price,
+[id^="SiteWidgetMoyklass"] .wdgMoyklass-form-PriceComment {
   display: none !important;
 }
 
-.course-class-title { margin-bottom: 1.5rem; font-size: 1rem; }
-.course-section h2 { margin-bottom: 0.35rem; font-size: 1rem; }
+.course-class-title,
+.course-section h2,
+.course-program summary {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.course-class-title { margin-bottom: 1.5rem; }
+.course-section h2 { margin-bottom: 0.35rem; }
 .course-program summary {
   display: inline-block;
   cursor: pointer;
   list-style: none;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.25;
   color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
