@@ -75,8 +75,7 @@ h3 {
 }
 
 h1 { margin: 0 0 1rem; font-size: 1.75rem; }
-h2,
-.course-program summary { font-size: 1.4rem; }
+h2 { font-size: 1.4rem; }
 h2 { margin: 0 0 0.8rem; }
 h3 { margin: 0 0 0.55rem; font-size: 1.18rem; }
 p { margin: 0.65rem 0; }
@@ -111,11 +110,13 @@ p { margin: 0.65rem 0; }
 .course-section,
 .course-program { margin-top: 2rem; }
 
-.course-section h2 { margin-bottom: 0.35rem; }
+.course-class-title { margin-bottom: 1.5rem; font-size: 1rem; }
+.course-section h2 { margin-bottom: 0.35rem; font-size: 1rem; }
 .course-program summary {
   display: inline-block;
   cursor: pointer;
   list-style: none;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.25;
   text-decoration: underline;
@@ -179,7 +180,6 @@ p { margin: 0.65rem 0; }
   .site-nav { gap: 0.25rem 0.85rem; }
   .page { padding-top: 0.75rem; }
   h1 { font-size: 1.6rem; }
-  h2,
-  .course-program summary { font-size: 1.3rem; }
+  h2 { font-size: 1.3rem; }
   h3 { font-size: 1.12rem; }
 }
