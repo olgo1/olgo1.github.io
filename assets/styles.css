@@ -88,9 +88,6 @@ p { margin: 0.65rem 0; }
 
 .lead { max-width: 760px; font-size: 1rem; }
 .eyebrow { margin: 0 0 0.4rem; color: var(--muted); font-size: 0.95rem; }
-.hero-note { margin-top: 1.2rem; color: var(--muted); }
-.hero-note strong { display: block; color: var(--text); }
-
 .section { margin-top: 2.4rem; }
 .section-heading { margin-bottom: 1rem; }
 .section-heading p { color: var(--muted); }
@@ -103,7 +100,6 @@ p { margin: 0.65rem 0; }
 
 .news-item { margin: 1.25rem 0; }
 .news-item time { color: var(--muted); font-size: 0.9rem; }
-.news-item h3 { margin: 0.25rem 0 0.4rem; }
 .news-item p { max-width: 72ch; }
 
 .contact-details h1 { margin-bottom: 0.3rem; }
