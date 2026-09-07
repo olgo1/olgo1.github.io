@@ -149,7 +149,7 @@ p { margin: 0.65rem 0; }
   font-weight: 700;
   line-height: 1.5;
 }
-.course-class-title { margin-bottom: 1.5rem; }
+.course-class-title { margin-bottom: 1.5rem; font-size: 1.35rem; }
 .course-section h2 { margin-bottom: 0.35rem; }
 .course-program summary {
   display: inline-block;
