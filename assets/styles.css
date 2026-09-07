@@ -110,6 +110,16 @@ p { margin: 0.65rem 0; }
 .course-section { margin-top: 2rem; }
 .course-program { margin-top: 2rem; }
 
+.course-schedule {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-schedule li { margin: 0 0 0.85rem; }
+.course-schedule strong,
+.course-schedule span { display: block; }
+
 .course-class-title { margin-bottom: 1.5rem; font-size: 1rem; }
 .course-section h2 { margin-bottom: 0.35rem; font-size: 1rem; }
 .course-program summary {
