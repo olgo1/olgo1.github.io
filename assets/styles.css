@@ -14,8 +14,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Times New Roman", Times, serif;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: normal;
 }
 
 a { color: var(--link); text-decoration: underline; }
@@ -71,13 +71,12 @@ h2,
 h3 {
   font-family: inherit;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: normal;
 }
 
-h1 { margin: 0 0 1rem; font-size: 1.75rem; }
-h2 { font-size: 1.4rem; }
-h2 { margin: 0 0 0.8rem; }
-h3 { margin: 0 0 0.55rem; font-size: 1.18rem; }
+h1 { margin: 0.83em 0; font-size: 1.5rem; }
+h2 { margin: 1.33em 0; font-size: 1rem; }
+h3 { margin: 1em 0; font-size: 1rem; }
 p { margin: 0.65rem 0; }
 
 .hero,
@@ -145,12 +144,12 @@ p { margin: 0.65rem 0; }
 .course-program summary,
 .course-cost-title {
   font-family: inherit;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: normal;
 }
-.course-class-title { margin-bottom: 1.5rem; font-size: 1.35rem; }
-.course-section h2 { margin-bottom: 0.35rem; }
+.course-class-title { margin: 0.83em 0; font-size: 1.5rem; }
+.course-section h2 { margin: 1.33em 0; }
 .course-program summary {
   display: inline-block;
   cursor: pointer;
@@ -173,8 +172,8 @@ p { margin: 0.65rem 0; }
 .contact-list { margin: 0; padding-left: 1.25rem; }
 .contact-list li { margin: 0.5rem 0; }
 
-.content-shell h2 { margin-top: 2rem; }
-.content-shell h3 { margin-top: 1.5rem; }
+.content-shell h2 { margin-top: 1.33em; }
+.content-shell h3 { margin-top: 1em; }
 .content-shell p,
 .content-shell li { max-width: 72ch; }
 .content-shell hr { margin: 2rem 0; border: 0; border-top: 1px solid #999999; }
@@ -184,7 +183,7 @@ p { margin: 0.65rem 0; }
 .empty-state p { color: var(--muted); }
 
 .toc { margin: 1.25rem 0 2rem; }
-.toc strong { font-size: 1.18rem; }
+.toc strong { font-size: 1rem; }
 .toc ul { margin: 0.45rem 0 0; padding-left: 1.25rem; }
 .toc li { margin: 0.25rem 0; }
 
@@ -210,13 +209,13 @@ p { margin: 0.65rem 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin-top: 0.45rem; }
 
 @media (max-width: 640px) {
-  body { font-size: 17px; }
+  body { font-size: 16px; }
   .header-inner,
   .page,
   .site-footer { width: min(calc(100% - 1.5rem), var(--max)); }
   .site-nav { gap: 0.25rem 0.85rem; }
   .page { padding-top: 0.75rem; }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.3rem; }
-  h3 { font-size: 1.12rem; }
+  h1 { font-size: 1.5rem; }
+  h2,
+  h3 { font-size: 1rem; }
 }
