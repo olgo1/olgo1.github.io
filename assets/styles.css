@@ -107,6 +107,19 @@ p { margin: 0.65rem 0; }
 
 .course-list li { margin: 0.75rem 0; }
 
+.course-enrollment-note { max-width: 72ch; }
+.course-form-toggle { cursor: pointer; }
+.course-interest-form { margin: 1.25rem 0 2rem; }
+.course-form-fallback { margin: 0 0 0.75rem; }
+.course-interest-form iframe {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: 1180px;
+  border: 0;
+  background: #ffffff;
+}
+
 .course-section { margin-top: 2rem; }
 .course-program { margin-top: 2rem; }
 
@@ -124,21 +137,6 @@ p { margin: 0.65rem 0; }
 .course-schedule-note p { margin: 0.35rem 0; }
 .course-cost-title { margin: 1rem 0 0.35rem; }
 .course-cost { margin-top: 0; }
-.course-registration { display: flex; flex-direction: column; }
-.course-registration .course-cost-title { order: 1; }
-.course-registration .course-cost { order: 2; }
-.course-registration > h2 { order: 3; }
-.course-registration > p:not(.course-cost) { order: 4; }
-.course-registration > [id^="SiteWidgetMoyklass"] { order: 5; }
-
-[id^="SiteWidgetMoyklass"] > .wdgMoyklass-h1,
-[id^="SiteWidgetMoyklass"] > .wdgMoyklass-h3.text-center,
-[id^="SiteWidgetMoyklass"] .oneClassItem,
-[id^="SiteWidgetMoyklass"] [id$="shortDescriptionContainer"],
-[id^="SiteWidgetMoyklass"] .lesson-item-price,
-[id^="SiteWidgetMoyklass"] .wdgMoyklass-form-PriceComment {
-  display: none !important;
-}
 
 .course-class-title,
 .course-section h2,
