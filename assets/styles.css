@@ -80,6 +80,90 @@ h3 { margin: 1em 0; font-size: 1rem; }
 .lesson-title { font-weight: 400; }
 p { margin: 0.65rem 0; }
 
+/* Спокойный список занятий: метка, заголовок и пояснение в одной типографической системе. */
+.lesson-list {
+  max-width: 980px;
+  margin-top: 2rem;
+  border-top: 1px solid #cfd2d8;
+}
+
+.lesson-item {
+  padding: 1.15rem 0 1.25rem;
+  border-bottom: 1px solid #cfd2d8;
+}
+
+.lesson-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.lesson-meta {
+  flex: 0 0 auto;
+  color: #626a79;
+  font-size: 1.08rem;
+  white-space: nowrap;
+}
+
+.lesson-line h2 {
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.18rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.lesson-line h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lesson-line h2 a:hover { color: var(--link); }
+
+.lesson-subtitle,
+.lesson-note {
+  margin: 0.18rem 0 0;
+  color: #41454d;
+  font-size: 1rem;
+  line-height: 1.42;
+}
+
+.lesson-note {
+  max-width: 82ch;
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.lesson-link-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  color: var(--text);
+  font-size: 1.18rem;
+  text-decoration: none;
+}
+
+.lesson-link-row:visited { color: var(--text); }
+.lesson-link-row:hover { color: var(--link); }
+.lesson-link-row > span:last-child { display: block; }
+.lesson-link-row strong { font-weight: 400; }
+.lesson-link-row small {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.42;
+}
+
+.subject-list { margin-bottom: 2.7rem; }
+.quiet-section-title {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
 .hero,
 .content-shell,
 .section-heading,
@@ -217,4 +301,8 @@ p { margin: 0.65rem 0; }
   h1 { font-size: 1.5rem; }
   h2,
   h3 { font-size: 1rem; }
+  .lesson-line { gap: 0.6rem; }
+  .lesson-meta { font-size: 0.98rem; }
+  .lesson-line h2 { font-size: 1.08rem; }
+  .lesson-link-row { align-items: flex-start; font-size: 1.08rem; }
 }
