@@ -114,8 +114,8 @@ p { margin: 0.65rem 0; }
 }
 
 .lesson-line h2 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--link);
+  text-decoration: underline;
 }
 
 .lesson-line h2 a:hover { color: var(--link); }
