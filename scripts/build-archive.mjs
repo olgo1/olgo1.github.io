@@ -77,6 +77,7 @@ function worksheetTitle(file) {
   if (lower.includes("irrat_numbers")) return "Иррациональные числа — теория";
   if (lower.includes("alg_001_002")) return "Функции и графики — листки 1–2";
   if (lower.includes("alg_005_006")) return "Перпендикулярные прямые на координатной плоскости — уроки 5–6";
+  if (lower.includes("alg_015_test")) return "Алгебра, урок 15 — проверочная по теме «Исследование функции»";
 
   const lesson = name.match(/(?:alg|geom)_(\d+)/i)?.[1];
   if (lesson) {
