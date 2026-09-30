@@ -26,6 +26,7 @@ const groups = [
   { id: "geometry-7", title: "7 класс · геометрия", section: "worksheets" },
   { id: "algebra-8", title: "8 класс · алгебра", section: "worksheets" },
   { id: "algebra-9", title: "9 класс · алгебра", section: "worksheets" },
+  { id: "geometry-9", title: "9 класс · геометрия", section: "worksheets" },
   { id: "games-files", title: "Математические игры", section: "games" },
   { id: "other", title: "Другие сохранённые материалы", section: "worksheets" },
 ];
@@ -42,6 +43,7 @@ function groupFor(file) {
   if (f.includes("/7grade/geom_course_2025-26/")) return "geometry-7";
   if (f.includes("/7grade/courses2025-26/")) return "algebra-7";
   if (f.includes("/8grade/")) return "algebra-8";
+  if (f.endsWith("/9grade/geometry-volchkevich.pdf") || f.includes("/9grade/geom_")) return "geometry-9";
   if (f.includes("/9grade/")) return "algebra-9";
   return "other";
 }
@@ -70,6 +72,9 @@ function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
   if (name === "4_6_Comba_book.pdf") return "Комбинаторика. Перебор и подсчёт — теория и 50 задач с ответами";
+  if (name === "geometry-volchkevich.pdf") return "Геометрия, 9 класс — учебное пособие (Волчкевич)";
+  if (name === "geom_005_006.pdf") return "Геометрия, уроки 5–6 — условия";
+  if (name === "geom_005_006_answers.pdf") return "Геометрия, уроки 5–6 — условия и ответы";
   if (lower.includes("3_4_ariph_problems_methods_ans")) return "Арифметические задачи: методы решения — с ответами";
   if (lower.includes("3_4_ariph_problems_methods")) return "Арифметические задачи: методы решения — задания";
   if (lower.includes("4_olymp_2010_2020")) return "Олимпиада школы 1514, 2010–2020 — задания и решения";
