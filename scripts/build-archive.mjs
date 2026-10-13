@@ -83,6 +83,7 @@ function worksheetTitle(file) {
   if (lower.includes("alg_001_002")) return "Функции и графики — листки 1–2";
   if (lower.includes("alg_005_006")) return "Перпендикулярные прямые на координатной плоскости — уроки 5–6";
   if (lower.includes("alg_015_test")) return "Алгебра, урок 15 — проверочная по теме «Исследование функции»";
+  if (lower.includes("alg_017_018_control_functions")) return "Контрольная работа по теме: Функции и графики. Исследование графиков";
 
   const lesson = name.match(/(?:alg|geom)_(\d+)/i)?.[1];
   if (lesson) {
