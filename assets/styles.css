@@ -90,6 +90,8 @@ p { margin: 0.65rem 0; }
   border-top: 1px solid var(--rule);
 }
 
+.lesson-list-no-top-border { border-top: 0; }
+
 .lesson-item {
   padding: 1.15rem 0 1.25rem;
   border-bottom: 1px solid var(--rule);
