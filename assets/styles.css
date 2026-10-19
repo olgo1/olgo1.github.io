@@ -320,4 +320,4 @@ p { margin: 0.65rem 0; }
 
 .geometry-lessons { margin-top: 0.75rem; }
 .geometry-materials { padding-top: 0.25rem; }
-.geometry-materials .lesson-topic > h2 { margin-bottom: 0.5rem; }
+.geometry-materials .lesson-topic > h2 { margin: 0 0 0.5rem; }
