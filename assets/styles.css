@@ -317,3 +317,7 @@ p { margin: 0.65rem 0; }
   .lesson-line h2 { font-size: 1.08rem; }
   .lesson-link-row { align-items: flex-start; font-size: 1.08rem; }
 }
+
+.geometry-lessons { margin-top: 0.75rem; }
+.geometry-materials { padding-top: 0.25rem; }
+.geometry-materials .lesson-topic > h2 { margin-bottom: 0.5rem; }
