@@ -71,6 +71,8 @@ function examTitle(name) {
 function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
+  if (name === "graph_transformations_composition_50.pdf") return "Композиция преобразований (без модулей) — 50 графиков, задания";
+  if (name === "graph_transformations_composition_50_answers.pdf") return "Композиция преобразований (без модулей) — ответы к 50 графикам";
   if (name === "4_6_Comba_book.pdf") return "Комбинаторика. Перебор и подсчёт — теория и 50 задач с ответами";
   if (name === "geometry-volchkevich.pdf") return "Геометрия, 9 класс — учебное пособие (Волчкевич)";
   if (name === "geom_005_006.pdf") return "Геометрия, уроки 5–6 — условия";
