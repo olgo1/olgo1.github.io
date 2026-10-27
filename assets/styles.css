@@ -321,3 +321,43 @@ p { margin: 0.65rem 0; }
 .geometry-lessons { margin-top: 0.75rem; }
 .geometry-materials { padding-top: 0.25rem; }
 .geometry-materials .lesson-topic > h2 { margin: 0 0 0.5rem; }
+
+/* На странице класса разделы отделяются от новостей расстоянием. */
+.grade9-page .page { padding-top: 2.25rem; }
+.grade9-page .page { font-size: 1.125rem; }
+.grade9-page .content-shell { max-width: 760px; }
+.grade9-page h1 { margin: 0 0 1.25rem; font-size: 1.75rem; line-height: 1.2; }
+
+.grade9-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.grade9-page a { text-underline-offset: 0.14em; }
+.grade9-page a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.grade9-news { margin-top: 2.75rem; }
+.grade9-news > h2 { margin: 0 0 1.5rem; font-size: 1.25rem; line-height: 1.3; }
+
+.grade9-news-item {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: baseline;
+}
+
+.grade9-news-item + .grade9-news-item { margin-top: 1.75rem; }
+.grade9-news-date { color: var(--muted); font-size: 1rem; line-height: 1.5; }
+.grade9-news-item > h3 { margin: 0; font-size: 1.25rem; font-weight: 400; line-height: 1.4; }
+.grade9-news-item > p { grid-column: 2; margin: 0; color: var(--subtle-text); font-size: 1.125rem; line-height: 1.5; }
+
+@media (max-width: 480px) {
+  .grade9-page .page { padding-top: 1.75rem; }
+  .grade9-subjects { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .grade9-news { margin-top: 2.25rem; }
+  .grade9-news-item { grid-template-columns: minmax(0, 1fr); row-gap: 0.25rem; }
+  .grade9-news-item > p { grid-column: 1; }
+}
