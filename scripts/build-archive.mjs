@@ -78,6 +78,8 @@ function worksheetTitle(file) {
   if (name === "geom_005_006.pdf") return "Геометрия, уроки 5–6 — условия";
   if (name === "geom_005_006_answers.pdf") return "Геометрия, уроки 5–6 — условия и ответы";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
+  if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
+  if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
   if (name === "geom_019_020_sine.pdf") return "Теорема синусов. Практикум, 14 октября — условия";
   if (name === "geom_019_020_sine_solutions.pdf") return "Теорема синусов. Практикум, 14 октября — решения";
   if (lower.includes("3_4_ariph_problems_methods_ans")) return "Арифметические задачи: методы решения — с ответами";
