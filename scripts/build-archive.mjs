@@ -71,6 +71,8 @@ function examTitle(name) {
 function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
+  if (name === "function_transformations_2026-10-27.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — условия, два варианта";
+  if (name === "function_transformations_2026-10-27_answers.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — ответы";
   if (name === "graph_transformations_composition_50.pdf") return "Композиция преобразований (без модулей) — 50 графиков, задания";
   if (name === "graph_transformations_composition_50_answers.pdf") return "Композиция преобразований (без модулей) — ответы к 50 графикам";
   if (name === "4_6_Comba_book.pdf") return "Комбинаторика. Перебор и подсчёт — теория и 50 задач с ответами";
