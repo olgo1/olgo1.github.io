@@ -75,6 +75,7 @@ function worksheetTitle(file) {
   if (name === "alg_oge_graph_format_rules.pdf") return "ОГЭ. Правила оформления графиков";
   if (name === "alg_program_2026-2027.pdf") return "Программа по алгебре, 9 класс, 2026–2027";
   if (name === "function_transformations_2026-10-27.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — условия, два варианта";
+  if (name === "function_modulus_independent_work_2026-10-29.pdf") return "Базовые преобразования с модулями — самостоятельная работа, 29 октября";
   if (name === "function_transformations_2026-10-27_answers.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — ответы";
   if (name === "graph_transformations_composition_50.pdf") return "Композиция преобразований (без модулей) — 50 графиков, задания";
   if (name === "graph_transformations_composition_50_answers.pdf") return "Композиция преобразований (без модулей) — ответы к 50 графикам";
