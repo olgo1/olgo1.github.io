@@ -71,6 +71,7 @@ function examTitle(name) {
 function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
+  if (name === "alg_oge_word_problem_solution_format.pdf") return "ОГЭ. Как оформить решение текстовой задачи";
   if (name === "alg_program_2026-2027.pdf") return "Программа по алгебре, 9 класс, 2026–2027";
   if (name === "function_transformations_2026-10-27.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — условия, два варианта";
   if (name === "function_transformations_2026-10-27_answers.pdf") return "Самостоятельная работа по преобразованиям графиков, 27 октября — ответы";
