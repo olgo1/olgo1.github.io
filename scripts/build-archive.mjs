@@ -79,6 +79,8 @@ function worksheetTitle(file) {
   if (name === "geometry-volchkevich.pdf") return "Геометрия, 9 класс — учебное пособие (Волчкевич)";
   if (name === "geom_005_006.pdf") return "Геометрия, уроки 5–6 — условия";
   if (name === "geom_005_006_answers.pdf") return "Геометрия, уроки 5–6 — условия и ответы";
+  if (name === "geom_2026-10-31_theory_tasks.pdf") return "Проверочная по теории, 31 октября — задания";
+  if (name === "geom_2026-10-31_theory_answers.pdf") return "Проверочная по теории, 31 октября — ответы к задачам";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
   if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
   if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
