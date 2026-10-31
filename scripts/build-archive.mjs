@@ -81,6 +81,7 @@ function worksheetTitle(file) {
   if (name === "geom_005_006_answers.pdf") return "Геометрия, уроки 5–6 — условия и ответы";
   if (name === "geom_2026-10-31_theory_tasks.pdf") return "Тест по теории перед контрольной, 31 октября — задания";
   if (name === "geom_2026-10-31_theory_answers.pdf") return "Тест по теории перед контрольной, 31 октября — ответы к задачам";
+  if (name === "geom_2026-10-31_proofs.pdf") return "Задачи на доказательство, 31 октября — 3 задачи";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
   if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
   if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
