@@ -1,0 +1,36 @@
+/* Верхние материалы и демо-версия на странице геометрии. */
+.geometry-materials {
+  border-bottom: 0;
+}
+
+.geometry-materials .lesson-topic {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.geometry-materials .lesson-subtitle {
+  margin: 0;
+}
+
+.geometry-demo {
+  border: 0;
+}
+
+.geometry-demo .lesson-topic > h2 {
+  margin: 0;
+}
+
+.geometry-demo h2 a,
+.geometry-demo h2 a:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.geometry-demo h2 a:hover {
+  color: var(--link);
+}
+
+.geometry-demo h2 a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
