@@ -83,6 +83,7 @@ function worksheetTitle(file) {
   if (name === "geometry-volchkevich.pdf") return "Геометрия, 9 класс — учебное пособие (Волчкевич)";
   if (name === "geom_005_006.pdf") return "Геометрия, уроки 5–6 — условия";
   if (name === "geom_005_006_answers.pdf") return "Геометрия, уроки 5–6 — условия и ответы";
+  if (name === "geom_2026-11-05_quadrilaterals_volchkevich.pdf") return "Четырёхугольники. Задачи из Волчкевича, 5 ноября — № 22–25, 29–31";
   if (name === "geom_2026-10-31_theory_tasks.pdf") return "Тест по теории перед контрольной, 31 октября — задания";
   if (name === "geom_2026-10-31_theory_answers.pdf") return "Тест по теории перед контрольной, 31 октября — ответы к задачам";
   if (name === "geom_2026-10-31_proofs.pdf") return "Задачи на доказательство, 31 октября — 3 задачи";
