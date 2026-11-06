@@ -90,7 +90,8 @@ function worksheetTitle(file) {
   if (name === "geom_2026-10-31_theory_answers.pdf") return "Тест по теории перед контрольной, 31 октября — ответы к задачам";
   if (name === "geom_2026-10-31_proofs.pdf") return "Задачи на доказательство, 31 октября — 3 задачи";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
-  if (name === "geom_trigonometry_control_demo.pdf") return "Демо-версия контрольной по теме: Тригонометрические формулы";
+  if (name === "geom_trigonometry_control_demo.pdf") return "Демо-версия контрольной по тригонометрии: условия";
+  if (name === "geom_trigonometry_control_demo_solutions.pdf") return "Демо-версия контрольной по тригонометрии: решения";
   if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
   if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
   if (name === "geom_019_020_sine.pdf") return "Теорема синусов. Практикум, 14 октября — условия";
