@@ -188,6 +188,18 @@ p { margin: 0.65rem 0; }
 .section-heading { margin-bottom: 1rem; }
 .section-heading p { color: var(--muted); }
 
+.home-announcements {
+  max-width: 900px;
+  color: #c00000;
+  display: grid;
+  gap: 1rem;
+}
+
+.home-announcements p { margin: 0; line-height: 1.45; }
+.home-announcements a,
+.home-announcements a:visited,
+.home-announcements a:hover { color: inherit; }
+
 .card-grid { max-width: 900px; }
 .card { margin: 1rem 0; }
 .card p { margin: 0.35rem 0; }

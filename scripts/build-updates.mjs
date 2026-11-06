@@ -28,10 +28,10 @@ for (const entry of entries) {
 entries.sort((a, b) => b.date.localeCompare(a.date));
 const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
-function renderEntry(entry) {
+function renderEntry(entry, includeLinks = true) {
   const [year, month, day] = entry.date.split("-").map(Number);
   const dateLabel = `${day} ${months[month - 1]} ${year}`;
-  const content = entry.segments.map(segment => segment.href
+  const content = entry.segments.map(segment => includeLinks && segment.href
     ? `<a href="${escapeHtml(segment.href)}">${escapeHtml(segment.text)}</a>`
     : escapeHtml(segment.text)).join("");
   return `        <article class="news-item">\n          <p><time datetime="${entry.date}">${dateLabel}</time> — ${content}</p>\n        </article>`;
@@ -44,9 +44,8 @@ const latestSection = `    <section class="section" aria-labelledby="updates-tit
       <!-- Generated from data/updates.json by scripts/build-updates.mjs; latest ${homeLimit} only. -->
       <div class="section-heading"><h2 id="updates-title">Обновления</h2></div>
       <div class="news-list">
-${entries.slice(0, homeLimit).map(renderEntry).join("\n")}
+${entries.slice(0, homeLimit).map(entry => renderEntry(entry, false)).join("\n")}
       </div>
-      <p><a href="/updates/">Все обновления</a></p>
     </section>`;
 
 const header = home.match(/  <header class="site-header">[\s\S]*?<\/header>/)?.[0].replace('href="/" aria-current="page"', 'href="/"');
@@ -69,7 +68,7 @@ ${header}
     <!-- Generated from data/updates.json by scripts/build-updates.mjs; full history. -->
     <div class="section-heading"><h1>Все обновления</h1></div>
     <div class="news-list">
-${entries.map(renderEntry).join("\n")}
+${entries.map(entry => renderEntry(entry)).join("\n")}
     </div>
     <p><a href="/">На главную</a></p>
   </main>
