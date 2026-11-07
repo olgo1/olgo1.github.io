@@ -45,6 +45,111 @@
   padding-left: 0.15rem;
 }
 
+.program-module .program-lesson-item {
+  padding-left: 0.15rem;
+  list-style: none;
+}
+
+.program-lesson > summary {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  color: var(--link);
+  cursor: pointer;
+  list-style: none;
+}
+
+.program-lesson > summary::-webkit-details-marker {
+  display: none;
+}
+
+.program-lesson-number {
+  position: absolute;
+  right: calc(100% + 0.35rem);
+  min-width: 1.3em;
+  text-align: right;
+}
+
+.program-lesson-title {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.program-lesson > summary::after {
+  content: "";
+  flex: 0 0 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.2rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.program-lesson[open] > summary::after {
+  transform: translateY(0.1rem) rotate(225deg);
+}
+
+.program-lesson > summary:hover {
+  color: var(--link-hover);
+}
+
+.program-lesson > summary:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+
+.program-lesson-content {
+  margin: 0.75rem 0 1rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #d2deea;
+  border-radius: 4px;
+  background: #fff;
+  line-height: 1.55;
+}
+
+.program-lesson-content .lesson-tasks {
+  padding-left: 1.35rem;
+}
+
+.lesson-tasks > li {
+  margin: 1.4rem 0 0;
+}
+
+.lesson-tasks > li:first-child {
+  margin-top: 0;
+}
+
+.lesson-tasks > li::marker {
+  font-weight: 700;
+}
+
+.lesson-tasks p {
+  margin: 0.65rem 0;
+}
+
+.lesson-tasks > li:first-child > p:first-child {
+  margin-top: 0;
+}
+
+.lesson-tasks > li:last-child > p:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-tasks math {
+  font-size: 1.1em;
+}
+
+.lesson-tasks math[display="block"] {
+  margin: 1.2rem 0;
+}
+
+.program-lesson-content .lesson-task-options {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
 @media (max-width: 640px) {
   .trainer-program h1 {
     font-size: 1.5rem;
@@ -52,5 +157,9 @@
 
   .program-module + .program-module {
     margin-top: 1.75rem;
+  }
+
+  .program-lesson-content {
+    padding: 0.75rem;
   }
 }
