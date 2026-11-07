@@ -72,6 +72,8 @@
 }
 
 .program-lesson-title {
+  flex: 1;
+  min-width: 0;
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
