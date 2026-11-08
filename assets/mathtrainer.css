@@ -17,7 +17,7 @@
 .trainer-program .program-heading a {
   font-size: 1rem;
   font-weight: 400;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .program-modules {
