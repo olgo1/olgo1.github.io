@@ -2,6 +2,13 @@
   max-width: 820px;
 }
 
+.trainer-program,
+.trainer-overview,
+.trainer-program :is(h1, h2, h3, h4, h5, h6, strong, b, summary),
+.trainer-overview :is(h1, h2, h3, h4, h5, h6, strong, b, summary, a) {
+  font-weight: 400;
+}
+
 .trainer-program h1 {
   margin: 0 0 0.75rem;
   font-size: 1.75rem;
@@ -124,7 +131,7 @@
 }
 
 .lesson-tasks > li::marker {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .lesson-tasks p {
