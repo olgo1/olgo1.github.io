@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage[russian]{babel}
+\usepackage[a4paper,left=17mm,right=17mm,top=14mm,bottom=14mm]{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{needspace}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\newcommand{\mixed}[3]{#1\frac{#2}{#3}}
+\newcommand{\answerrow}{%
+  \par\vspace{3pt}\noindent\small
+  Упрощённое выражение: \fbox{\rule{0pt}{17pt}\hspace{132pt}}%
+  \hfill Ответ: \fbox{\rule{0pt}{17pt}\hspace{76pt}}\normalsize\par}
+\newcommand{\variant}[3]{%
+  \Needspace{58pt}\noindent\textbf{#1)}\quad
+  $\displaystyle #2,\qquad x=#3.$%
+  \answerrow\vspace{9pt}}
+\begin{document}
+{\small 6 класс\enspace\textperiodcentered\enspace Модуль 2\enspace\textperiodcentered\enspace Задание 7}\par
+\vspace{5pt}
+{\fontsize{17}{21}\selectfont\bfseries Умножение смешанных чисел}\par
+\vspace{2pt}
+{\fontsize{13}{16}\selectfont Счёт, выражения, уравнения}\par
+\vspace{7pt}
+{\color{black!25}\hrule}
+\vspace{10pt}
+
+\textbf{1. Запишите всю цепочку вычислений и получите ответ.}
+В окончательном ответе выделите целую часть и сократите дробную.
+\[
+  \mixed{2}{1}{4}\cdot0{,}8+\frac56\cdot\mixed{1}{3}{5}-\mixed{1}{3}{10}.
+\]
+\vspace{-4pt}
+\noindent{\color{black!30}\rule{\dimexpr\linewidth-2pt\relax}{0.35pt}}\par\vspace{16pt}
+\noindent{\color{black!30}\rule{\dimexpr\linewidth-2pt\relax}{0.35pt}}\par
+\vspace{12pt}
+
+\textbf{2. Упростите выражения, затем найдите их значения.}
+В каждом подпункте заполните два поля. В ответах выделите целую часть и сократите дробную.
+\par\vspace{8pt}
+\variant{а}{\mixed{1}{3}{4}x+\left(\frac5{12}x-\mixed{1}{1}{6}\right)}{1{,}2}
+\variant{б}{\mixed{2}{3}{4}x-\left(\mixed{1}{5}{12}x+\frac34\right)}{0{,}9}
+\variant{в}{\frac56x+\left(\frac7{10}x-0{,}75\right)}{\mixed{1}{1}{4}}
+\variant{г}{\mixed{2}{1}{6}x-\left(\frac7{10}x+\frac14\right)}{1{,}25}
+\variant{д}{\mixed{1}{1}{4}x+\left(\frac5{12}x-0{,}75\right)}{\mixed{1}{1}{2}}
+
+\Needspace{96pt}
+\textbf{3. Какие из произведений являются натуральными числами?}
+Выпишите номера всех подходящих вариантов. Вычислять значения произведений не нужно.
+\[
+  \text{1)}\;\mixed{2}{3}{8}\cdot8
+  \qquad\qquad
+  \text{2)}\;\mixed{1}{3}{5}\cdot\mixed{2}{1}{4}
+  \qquad\qquad
+  \text{3)}\;\mixed{3}{1}{3}\cdot0{,}3
+\]
+\vspace{-4pt}
+Номера вариантов: \fbox{\rule{0pt}{17pt}\hspace{110pt}}
+\end{document}
