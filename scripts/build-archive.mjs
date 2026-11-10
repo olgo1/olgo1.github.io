@@ -128,7 +128,12 @@ function titleFor(file, group) {
 }
 
 function hrefFor(file) {
-  return "/" + file.split("/").map(encodeURIComponent).join("/");
+  const href = "/" + file.split("/").map(encodeURIComponent).join("/");
+  if (file.endsWith("/geom_trigonometry_control_main_2026-11-10.pdf") ||
+      file.endsWith("/geom_trigonometry_demo_additional_2026-11-10.pdf")) {
+    return `${href}?v=20261110-points`;
+  }
+  return href;
 }
 
 function escapeHtml(value) {
