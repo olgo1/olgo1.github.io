@@ -3,14 +3,21 @@
     "date": "2026-11-10",
     "segments": [
       {
-        "text": "Выложена дополнительная демоверсия контрольной по геометрии для 9 класса: "
+        "text": "Выложены условия контрольной по тригонометрии для 9 класса: "
       },
       {
-        "text": "Тригонометрия",
-        "href": "/pages/grade9/geometry/#trigonometry-demo-additional-2026-11-10"
+        "text": "основной вариант",
+        "href": "/archive/files/imported/9grade/geom_trigonometry_control_main_2026-11-10.pdf?v=20261110-points"
       },
       {
-        "text": "."
+        "text": "; "
+      },
+      {
+        "text": "вариант для отсутствовавших",
+        "href": "/archive/files/imported/9grade/geom_trigonometry_demo_additional_2026-11-10.pdf?v=20261110-points"
+      },
+      {
+        "text": ". Работа рассчитана на 110 минут."
       }
     ]
   },

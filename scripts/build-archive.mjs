@@ -91,7 +91,8 @@ function worksheetTitle(file) {
   if (name === "geom_2026-10-31_proofs.pdf") return "Задачи на доказательство, 31 октября — 3 задачи";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
   if (name === "geom_trigonometry_control_demo.pdf") return "Демо-версия контрольной по тригонометрии: условия";
-  if (name === "geom_trigonometry_demo_additional_2026-11-10.pdf") return "Демо-версия контрольной по тригонометрии — дополнительный вариант, 10 ноября";
+  if (name === "geom_trigonometry_control_main_2026-11-10.pdf") return "Контрольная работа по теме «Тригонометрия» — условия (основной вариант)";
+  if (name === "geom_trigonometry_demo_additional_2026-11-10.pdf") return "Контрольная работа по теме «Тригонометрия» — вариант для отсутствовавших";
   if (name === "geom_trigonometry_control_demo_solutions.pdf") return "Демо-версия контрольной по тригонометрии: решения";
   if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
   if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
