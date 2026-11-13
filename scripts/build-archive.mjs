@@ -71,6 +71,9 @@ function examTitle(name) {
 function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
+  if (name === "alg_2026-11-10_transformations_control_2_variants.pdf") return "Контрольная работа по преобразованиям графиков, 10 ноября — два варианта с баллами";
+  if (name === "alg_2026-11-05_math_square.pdf") return "Матквадрат по преобразованиям графиков — финальный прогон перед контрольной";
+  if (name === "graph_transformations.pdf") return "Преобразования графиков — все задания, четыре главы";
   if (name === "alg_2026-11-05_parameters.pdf") return "Задачи с параметром, 5 ноября — задание 22";
   if (name === "alg_oge_word_problem_solution_format.pdf") return "ОГЭ. Как оформить решение текстовой задачи";
   if (name === "alg_oge_graph_format_rules.pdf") return "ОГЭ. Правила оформления графиков";
@@ -129,6 +132,7 @@ function titleFor(file, group) {
 
 function hrefFor(file) {
   const href = "/" + file.split("/").map(encodeURIComponent).join("/");
+  if (file.endsWith("/graph_transformations.pdf")) return `${href}?v=20261113-collection`;
   if (file.endsWith("/geom_trigonometry_control_main_2026-11-10.pdf") ||
       file.endsWith("/geom_trigonometry_demo_additional_2026-11-10.pdf")) {
     return `${href}?v=20261110-points`;
