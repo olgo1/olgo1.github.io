@@ -348,6 +348,7 @@ p { margin: 0.65rem 0; }
   line-height: 1.4;
 }
 
+.grade9-subjects a[aria-expanded="true"] { font-weight: 700; }
 .grade9-oge { padding-top: 0.5rem; }
 .grade9-page a { text-underline-offset: 0.14em; }
 .grade9-page a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
