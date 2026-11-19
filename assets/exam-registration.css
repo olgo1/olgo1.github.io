@@ -1,0 +1,43 @@
+.exam-page .content-shell { max-width: 760px; }
+.exam-page h1 { max-width: 29ch; }
+.exam-audience { max-width: 66ch; }
+.exam-details { margin: 1.25rem 0 1.75rem; }
+.exam-details p { margin: 0.5rem 0; }
+.exam-form { max-width: 640px; }
+.exam-sessions { margin: 0; padding: 0; border: 0; min-width: 0; }
+.exam-sessions legend { padding: 0; margin-bottom: 0.5rem; font-weight: 700; }
+.exam-session { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: 0.6rem; align-items: start; padding: 0.65rem 0; }
+.exam-session input { margin: 0.18rem 0 0; width: 1.1rem; height: 1.1rem; accent-color: var(--link); }
+.exam-session-text > span { display: block; }
+.exam-session-text { line-height: 1.4; }
+.exam-remaining { margin-top: 0.15rem; color: var(--subtle-text); font-size: 0.9rem; }
+.exam-session:has(input:disabled) .exam-session-text { color: var(--muted); }
+.exam-availability { margin: 0.35rem 0 1.5rem; }
+.exam-availability p { margin: 0.4rem 0; }
+.exam-form-note, .exam-field-note, .exam-optional { color: var(--subtle-text); font-size: 0.9rem; }
+.exam-form-note { line-height: 1.4; }
+.exam-field { display: grid; gap: 0.35rem; margin: 1rem 0; }
+.exam-field label { line-height: 1.35; }
+.exam-field input { display: block; width: 100%; min-width: 0; padding: 0.6rem 0.65rem; border: 1px solid #b7af9c; border-radius: 2px; background: #fff; color: var(--text); font: inherit; font-size: 1rem; line-height: 1.35; }
+.exam-field input[aria-invalid="true"] { border-color: #9c241a; }
+.exam-field input:focus-visible, .exam-form button:focus-visible, .exam-form input:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.exam-consent { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: 0.6rem; align-items: start; margin: 1.4rem 0; line-height: 1.45; }
+.exam-consent input { margin: 0.18rem 0 0; width: 1.1rem; height: 1.1rem; accent-color: var(--link); }
+.exam-form button { font: inherit; font-size: 1rem; line-height: 1.4; cursor: pointer; }
+.exam-submit { display: block; max-width: 100%; padding: 0.7rem 1rem; border: 1px solid var(--link); border-radius: 2px; background: var(--link); color: #fff; text-align: left; white-space: normal; }
+.exam-submit:hover:not(:disabled) { background: var(--link-hover); border-color: var(--link-hover); }
+.exam-submit:disabled { opacity: 0.6; cursor: default; }
+.exam-retry { padding: 0.4rem 0.65rem; border: 1px solid #b7af9c; border-radius: 2px; color: var(--text); background: transparent; }
+.exam-retry:disabled { cursor: default; }
+.exam-error { margin: 1rem 0; color: #9c241a; line-height: 1.4; }
+.exam-payment-retry { margin: 1rem 0; }
+@media (max-width: 420px) {
+  .exam-page h1 { max-width: none; }
+  .exam-submit { width: 100%; }
+  .exam-consent { gap: 0.5rem; }
+}
+@media (pointer: coarse) {
+  .exam-session { min-height: 44px; }
+  .exam-form button { min-height: 44px; }
+  .exam-consent { min-height: 44px; }
+}
