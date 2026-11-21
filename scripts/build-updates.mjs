@@ -11,7 +11,7 @@ function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-for (const entry of entries) {
+for (const entry of [...entries, ...homeNews]) {
   const date = new Date(`${entry.date}T00:00:00Z`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || !Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) {
     throw new Error(`Invalid update date: ${entry.date}`);
@@ -37,6 +37,7 @@ for (const entry of homeNews) {
 // ISO dates sort newest first; entries with the same date keep their source order.
 entries.sort((a, b) => b.date.localeCompare(a.date));
 const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+const shortMonths = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 
 function renderContent(entry) {
   return entry.segments.map(segment => segment.href
@@ -52,7 +53,9 @@ function renderEntry(entry) {
 }
 
 function renderHomeEntry(entry) {
-  return `        <article class="news-item">\n          <p>${renderContent(entry)}</p>\n        </article>`;
+  const [, month, day] = entry.date.split("-").map(Number);
+  const dateLabel = `${day} ${shortMonths[month - 1]}`;
+  return `        <article class="news-item">\n          <p><span class="home-news-date">[<time datetime="${entry.date}">${dateLabel}</time>]</span> <span class="home-news-text">${renderContent(entry)}</span></p>\n        </article>`;
 }
 
 const home = await readFile(homePath, "utf8");

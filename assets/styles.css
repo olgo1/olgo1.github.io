@@ -306,11 +306,24 @@ p { margin: 0.65rem 0; }
 }
 
 .home-news .news-item p {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
   margin: 0;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
 }
+
+.home-news-date {
+  flex: 0 0 auto;
+  color: var(--subtle-text);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.home-news .home-news-date time { color: inherit; font-size: inherit; }
+.home-news-text { min-width: 0; }
 
 .home-news .news-item a,
 .home-news .news-item a:visited { color: #1457c5; }
