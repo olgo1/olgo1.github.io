@@ -233,6 +233,17 @@
   min-width: 100%;
 }
 
+.lesson-number-line {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+.lesson-number-line text {
+  font-size: 26px;
+}
+
 .program-lesson-content .lesson-task-options {
   margin: 0.75rem 0;
   padding-left: 1.5rem;
