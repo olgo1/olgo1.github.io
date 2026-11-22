@@ -22,12 +22,8 @@
 
 .geometry-demo h2 a,
 .geometry-demo h2 a:visited {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.geometry-demo h2 a:hover {
   color: var(--link);
+  text-decoration: underline;
 }
 
 .geometry-demo h2 a:focus-visible {

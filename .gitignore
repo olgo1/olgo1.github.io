@@ -1,0 +1,19 @@
+# Public recovery snapshot; private working files are archived separately.
+/tmp/
+/output/
+/private/
+/.runtime/
+/.venv/
+/venv/
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.cache/
+/.env
+/.env.*
+*.pem
+*.key
+*.p12
+/algebra-publication-verification-20261113.json

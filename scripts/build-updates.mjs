@@ -4,17 +4,21 @@ import { fileURLToPath } from "node:url";
 const root = new URL("../", import.meta.url);
 const homePath = new URL("index.html", root);
 const entries = JSON.parse(await readFile(new URL("data/updates.json", root), "utf8"));
+const homeNews = JSON.parse(await readFile(new URL("data/home-news.json", root), "utf8"));
 const homeLimit = 3;
 
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-for (const entry of entries) {
+for (const entry of [...entries, ...homeNews]) {
   const date = new Date(`${entry.date}T00:00:00Z`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date) || !Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) {
     throw new Error(`Invalid update date: ${entry.date}`);
   }
+}
+
+for (const entry of [...entries, ...homeNews]) {
   if (!Array.isArray(entry.segments) || entry.segments.length === 0) throw new Error("An update needs text");
   for (const segment of entry.segments) {
     if (typeof segment.text !== "string") throw new Error("An update segment needs text");
@@ -24,29 +28,45 @@ for (const entry of entries) {
   }
 }
 
+if (homeNews.length > homeLimit) throw new Error(`Home news is limited to ${homeLimit} items`);
+for (const entry of homeNews) {
+  const words = entry.segments.map(segment => segment.text).join("").trim().split(/\s+/);
+  if (words.length > 10) throw new Error("Home news is limited to 10 words per item");
+}
+
 // ISO dates sort newest first; entries with the same date keep their source order.
 entries.sort((a, b) => b.date.localeCompare(a.date));
 const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+const shortMonths = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+
+function renderContent(entry) {
+  return entry.segments.map(segment => segment.href
+    ? `<a href="${escapeHtml(segment.href)}">${escapeHtml(segment.text)}</a>`
+    : escapeHtml(segment.text)).join("");
+}
 
 function renderEntry(entry) {
   const [year, month, day] = entry.date.split("-").map(Number);
   const dateLabel = `${day} ${months[month - 1]} ${year}`;
-  const content = entry.segments.map(segment => segment.href
-    ? `<a href="${escapeHtml(segment.href)}">${escapeHtml(segment.text)}</a>`
-    : escapeHtml(segment.text)).join("");
+  const content = renderContent(entry);
   return `        <article class="news-item">\n          <p><time datetime="${entry.date}">${dateLabel}</time> — ${content}</p>\n        </article>`;
 }
 
+function renderHomeEntry(entry) {
+  const [, month, day] = entry.date.split("-").map(Number);
+  const dateLabel = `${day} ${shortMonths[month - 1]}`;
+  return `        <article class="news-item">\n          <p><span class="home-news-date">[<time datetime="${entry.date}">${dateLabel}</time>]</span> <span class="home-news-text">${renderContent(entry)}</span></p>\n        </article>`;
+}
+
 const home = await readFile(homePath, "utf8");
-const sectionPattern = /    <section class="section" aria-labelledby="updates-title">[\s\S]*?<\/section>/;
+const sectionPattern = /    <section class="section(?: home-news)?" aria-labelledby="updates-title">[\s\S]*?<\/section>/;
 if (!sectionPattern.test(home)) throw new Error("Home page updates section not found");
-const latestSection = `    <section class="section" aria-labelledby="updates-title">
-      <!-- Generated from data/updates.json by scripts/build-updates.mjs; latest ${homeLimit} only. -->
-      <div class="section-heading"><h2 id="updates-title">Обновления</h2></div>
+const latestSection = `    <section class="section home-news" aria-labelledby="updates-title">
+      <!-- Generated from data/home-news.json by scripts/build-updates.mjs. -->
+      <div class="section-heading"><h2 id="updates-title">Новости</h2></div>
       <div class="news-list">
-${entries.slice(0, homeLimit).map(renderEntry).join("\n")}
+${homeNews.map(renderHomeEntry).join("\n")}
       </div>
-      <p><a href="/updates/">Все обновления</a></p>
     </section>`;
 
 const header = home.match(/  <header class="site-header">[\s\S]*?<\/header>/)?.[0].replace('href="/" aria-current="page"', 'href="/"');
@@ -81,4 +101,4 @@ ${footer}
 await mkdir(new URL("updates/", root), { recursive: true });
 await writeFile(new URL("updates/index.html", root), archive, "utf8");
 await writeFile(homePath, home.replace(sectionPattern, latestSection), "utf8");
-console.log(`Updates built: ${Math.min(homeLimit, entries.length)} on home, ${entries.length} in ${fileURLToPath(new URL("updates/index.html", root))}`);
+console.log(`Updates built: ${homeNews.length} on home, ${entries.length} in ${fileURLToPath(new URL("updates/index.html", root))}`);

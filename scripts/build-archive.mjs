@@ -71,6 +71,9 @@ function examTitle(name) {
 function worksheetTitle(file) {
   const name = path.basename(file);
   const lower = name.toLowerCase();
+  if (name === "alg_2026-11-10_transformations_control_2_variants.pdf") return "Контрольная работа по преобразованиям графиков, 10 ноября — два варианта с баллами";
+  if (name === "alg_2026-11-05_math_square.pdf") return "Матквадрат по преобразованиям графиков — финальный прогон перед контрольной";
+  if (name === "graph_transformations.pdf") return "Преобразования графиков — все задания, четыре главы";
   if (name === "alg_oge_word_problem_solution_format.pdf") return "ОГЭ. Как оформить решение текстовой задачи";
   if (name === "alg_oge_graph_format_rules.pdf") return "ОГЭ. Правила оформления графиков";
   if (name === "alg_program_2026-2027.pdf") return "Программа по алгебре, 9 класс, 2026–2027";
@@ -87,7 +90,8 @@ function worksheetTitle(file) {
   if (name === "geom_2026-10-31_theory_answers.pdf") return "Тест по теории перед контрольной, 31 октября — ответы к задачам";
   if (name === "geom_2026-10-31_proofs.pdf") return "Задачи на доказательство, 31 октября — 3 задачи";
   if (name === "geom_trigonometry_theory.pdf") return "Тригонометрия. Теория";
-  if (name === "geom_trigonometry_control_demo.pdf") return "Демо-версия контрольной по теме: Тригонометрические формулы";
+  if (name === "geom_trigonometry_control_demo.pdf") return "Демо-версия контрольной по тригонометрии: условия";
+  if (name === "geom_trigonometry_control_demo_solutions.pdf") return "Демо-версия контрольной по тригонометрии: решения";
   if (name === "geom_2026-10-28_trigonometry.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — условия";
   if (name === "geom_2026-10-28_trigonometry_answers.pdf") return "Практикум по решению задач с использованием формул тригонометрии, 28 октября — ответы";
   if (name === "geom_019_020_sine.pdf") return "Теорема синусов. Практикум, 14 октября — условия";
@@ -176,7 +180,7 @@ const html = `<!doctype html>
 </head>
 <body>
   <a class="skip-link" href="#content">К содержанию</a>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/pages/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a href="/archive/" aria-current="page">Материалы</a><a href="/contacts/">Контакты</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/">Математика 1514</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><a href="/">Главная</a><a href="/pages/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a hidden href="/archive/" aria-current="page">Материалы</a><a href="/contacts/">Контакты</a></nav></div></header>
   <main class="page" id="content">
     <div class="section-heading"><h1>Материалы</h1><p class="lead">Листочки, решения, игры и материалы курсов.</p></div>
     <nav class="toc" aria-label="Оглавление материалов"><strong>Оглавление</strong><ul><li><a href="#worksheets">Листочки и курсы</a></li><li><a href="#games">Игры</a></li><li><a href="#trainers">Тренажёры</a></li></ul></nav>

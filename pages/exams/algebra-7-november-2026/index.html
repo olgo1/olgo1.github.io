@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Запись на очный тренировочный экзамен по алгебре для 7 класса 20, 21 или 22 ноября 2026 года. Продолжительность 2,5 часа, стоимость 2 000 рублей.">
+  <title>Тренировочный экзамен по алгебре · 7 класс — Математика 1514</title>
+  <link rel="stylesheet" href="/assets/styles.css?v=20261119-1">
+  <link rel="stylesheet" href="/assets/exam-registration.css?v=20261119-1">
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/exam-registration.js?v=20261119-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">К содержанию</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">Математика 1514</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <a href="/">Главная</a><a href="/pages/grade9/">9 класс</a><a href="/pages/courses26-27/">Курсы 2026–27</a><a href="/pages/mathtrainer/">Тренажёр</a><a hidden href="/archive/">Материалы</a><a href="/contacts/">Контакты</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page exam-page" id="content">
+    <article class="content-shell">
+      <h1>Тренировочный экзамен по алгебре · 7 класс</h1>
+      <p class="exam-audience">Для поступающих в математические, мат-IT, инженерные и естественно-научные классы.</p>
+      <div class="exam-details">
+        <p>Очно: школа «Событие», ул. Новаторов, 36, корп. 2.</p>
+        <p>Продолжительность — 2 часа 30 минут. Все даты и время указаны по Москве.</p>
+        <p><strong>2 000 ₽</strong> за участие. По 18 мест на каждую дату.</p>
+      </div>
+      <form id="exam-registration" class="exam-form" method="post" data-api-base="https://mathnomagic-exam-registration.fgb631.chatgpt.site/api/exam-registration" aria-describedby="exam-form-note">
+        <fieldset class="exam-sessions" id="exam-sessions" disabled>
+          <legend>Выберите одну дату</legend>
+          <label class="exam-session" for="exam-session-20">
+            <input id="exam-session-20" type="radio" name="sessionId" value="" data-session-date="2026-11-20" aria-describedby="exam-remaining-20" required disabled>
+            <span class="exam-session-text"><span><time datetime="2026-11-20">20 ноября, пятница</time> · 12:30–15:00</span><span class="exam-remaining" id="exam-remaining-20">Проверяем наличие мест…</span></span>
+          </label>
+          <label class="exam-session" for="exam-session-21">
+            <input id="exam-session-21" type="radio" name="sessionId" value="" data-session-date="2026-11-21" aria-describedby="exam-remaining-21" required disabled>
+            <span class="exam-session-text"><span><time datetime="2026-11-21">21 ноября, суббота</time> · 10:00–12:30</span><span class="exam-remaining" id="exam-remaining-21">Проверяем наличие мест…</span></span>
+          </label>
+          <label class="exam-session" for="exam-session-22">
+            <input id="exam-session-22" type="radio" name="sessionId" value="" data-session-date="2026-11-22" aria-describedby="exam-remaining-22" required disabled>
+            <span class="exam-session-text"><span><time datetime="2026-11-22">22 ноября, воскресенье</time> · 10:00–12:30</span><span class="exam-remaining" id="exam-remaining-22">Проверяем наличие мест…</span></span>
+          </label>
+        </fieldset>
+        <div class="exam-availability">
+          <p id="exam-availability-status" role="status" aria-live="polite">Загружаем доступные места…</p>
+          <button id="exam-retry" class="exam-retry" type="button" hidden>Повторить проверку</button>
+        </div>
+        <p class="exam-form-note" id="exam-form-note">Обязательные поля отмечены звёздочкой. Контакты нужны для подтверждения записи и отправки результатов.</p>
+        <div class="exam-field">
+          <label for="exam-student-name">Фамилия и имя ученика *</label>
+          <input id="exam-student-name" name="studentName" type="text" autocomplete="name" minlength="2" maxlength="120" required>
+        </div>
+        <div class="exam-field">
+          <label for="exam-parent-email">Электронная почта родителя *</label>
+          <input id="exam-parent-email" name="parentEmail" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+        </div>
+        <div class="exam-field">
+          <label for="exam-parent-phone">Телефон родителя *</label>
+          <input id="exam-parent-phone" name="parentPhone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" aria-describedby="exam-phone-note" required>
+          <span class="exam-field-note" id="exam-phone-note">Например, +7 999 123-45-67.</span>
+        </div>
+        <div class="exam-field">
+          <label for="exam-school">Школа <span class="exam-optional">(необязательно)</span></label>
+          <input id="exam-school" name="school" type="text" autocomplete="organization" maxlength="160">
+        </div>
+        <div class="exam-field">
+          <label for="exam-school-class">Текущий класс <span class="exam-optional">(необязательно)</span></label>
+          <input id="exam-school-class" name="schoolClass" type="text" maxlength="40" placeholder="Например, 7А">
+        </div>
+        <label class="exam-consent" for="exam-consent">
+          <input id="exam-consent" name="consent" type="checkbox" required>
+          <span>Я согласен(на) на <a href="/pages/soglasie-na-obrabotku-personalnyh-dannyh-i-soglasi/" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен(а) с <a href="/pages/politika-konfedencialnosti/" target="_blank" rel="noopener">политикой конфиденциальности</a>. *</span>
+        </label>
+        <p id="exam-error" class="exam-error" role="alert" hidden></p>
+        <p id="exam-payment-retry" class="exam-payment-retry" hidden><a id="exam-payment-link" href="#">Вернуться к оплате</a></p>
+        <p class="exam-form-note">После отправки формы место будет учтено в записи. Затем оплатите участие в Т-Банке.</p>
+        <button id="exam-submit" class="exam-submit" type="submit" disabled>Записаться и перейти к оплате — 2 000 ₽</button>
+      </form>
+      <noscript><p>Для проверки свободных мест и записи включите JavaScript в браузере.</p></noscript>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-links"><a href="/contacts/">Контакты</a><a href="/pages/politika-konfedencialnosti/">Конфиденциальность</a><a href="/pages/soglasie-na-obrabotku-personalnyh-dannyh-i-soglasi/">Обработка персональных данных</a></div></div></footer>
+</body>
+</html>

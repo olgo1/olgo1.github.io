@@ -9,6 +9,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const ogeToggle = document.querySelector("[data-oge-toggle]");
+  const ogeSection = document.querySelector("#oge");
+
+  if (ogeToggle && ogeSection) {
+    const syncOge = () => {
+      const isOpen = window.location.hash === "#oge";
+      ogeSection.hidden = !isOpen;
+      ogeToggle.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    syncOge();
+
+    ogeToggle.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+
+      const url = new URL(window.location.href);
+      url.hash = ogeSection.hidden ? "oge" : "";
+      window.history.pushState(null, "", url);
+      syncOge();
+    });
+
+    window.addEventListener("hashchange", syncOge);
+    window.addEventListener("popstate", syncOge);
+  }
+
   const formToggle = document.querySelector("[data-course-form-toggle]");
   const formSection = document.querySelector("#course-interest-form");
 
